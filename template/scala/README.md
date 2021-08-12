@@ -2,7 +2,7 @@
 
 The Spark Scala template image serves as a base image to build your own Scala
 application to run on a Spark cluster. See
-[big-data-europe/docker-spark README](https://github.com/big-data-europe/docker-spark)
+[a0x8o/docker-spark README](https://github.com/a0x8o/docker-spark)
 for a description how to setup a Spark cluster.
 
 ## Scala Console

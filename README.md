@@ -1,5 +1,5 @@
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
-[![Build Status](https://travis-ci.org/big-data-europe/docker-spark.svg?branch=master)](https://travis-ci.org/big-data-europe/docker-spark)
+[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/a0x8o/Lobby)
+[![Build Status](https://travis-ci.org/a0x8o/docker-spark.svg?branch=master)](https://travis-ci.org/a0x8o/docker-spark)
 [![Twitter](https://img.shields.io/twitter/follow/BigData_Europe.svg?style=social)](https://twitter.com/BigData_Europe)
 # Spark docker
 
@@ -58,7 +58,7 @@ These Spark images can also be used in a Kubernetes enviroment.
 
 To deploy a simple Spark standalone cluster issue
 
-`kubectl apply -f https://raw.githubusercontent.com/big-data-europe/docker-spark/master/k8s-spark-cluster.yaml`
+`kubectl apply -f https://raw.githubusercontent.com/a0x8o/docker-spark/master/k8s-spark-cluster.yaml`
 
 This will setup a Spark standalone cluster with one master and a worker on every available node using the default namespace and resources. The master is reachable in the same namespace at `spark://spark-master:7077`.
 It will also setup a headless service so spark clients can be reachable from the workers using hostname `spark-client`.

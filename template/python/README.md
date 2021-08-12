@@ -1,6 +1,6 @@
 # Spark Python template
 
-The Spark Python template image serves as a base image to build your own Python application to run on a Spark cluster. See [big-data-europe/docker-spark README](https://github.com/big-data-europe/docker-spark) for a description how to setup a Spark cluster.
+The Spark Python template image serves as a base image to build your own Python application to run on a Spark cluster. See [a0x8o/docker-spark README](https://github.com/a0x8o/docker-spark) for a description how to setup a Spark cluster.
 
 ### Package your application using pip
 You can build and launch your Python application on a Spark cluster by extending this image with your sources. The template uses [pip](https://pip.pypa.io/en/stable/) to manage the dependencies of your
