@@ -8,6 +8,7 @@ Docker images to:
 * Build Spark applications in Java, Scala or Python to run on a Spark cluster
 
 Currently supported versions:
+* Spark 3.1.1 for Hadoop 3.2 with OpenJDK 8 and Scala 2.12
 * Spark 3.0.2 for Hadoop 3.2 with OpenJDK 8 and Scala 2.12
 * Spark 3.0.1 for Hadoop 3.2 with OpenJDK 8 and Scala 2.12
 * Spark 3.0.0 for Hadoop 3.2 with OpenJDK 11 and Scala 2.12
@@ -40,12 +41,12 @@ Currently supported versions:
 ### Spark Master
 To start a Spark master:
 
-    docker run --name spark-master -h spark-master -e ENABLE_INIT_DAEMON=false -d a0x8o/spark-master:3.0.2-hadoop3.2
+    docker run --name spark-master -h spark-master -e ENABLE_INIT_DAEMON=false -d a0x8o/spark-master:3.1.1-hadoop3.2
 
 ### Spark Worker
 To start a Spark worker:
 
-    docker run --name spark-worker-1 --link spark-master:spark-master -e ENABLE_INIT_DAEMON=false -d a0x8o/spark-worker:3.0.2-hadoop3.2
+    docker run --name spark-worker-1 --link spark-master:spark-master -e ENABLE_INIT_DAEMON=false -d a0x8o/spark-worker:3.1.1-hadoop3.2
 
 ## Launch a Spark application
 Building and running your Spark application on top of the Spark cluster is as simple as extending a template Docker image. Check the template's README for further documentation.
@@ -54,7 +55,7 @@ Building and running your Spark application on top of the Spark cluster is as si
 * [Scala template](template/scala)
 
 ## Kubernetes deployment
-These Spark images can also be used in a Kubernetes enviroment.
+The Spark images can also be used in a Kubernetes enviroment.
 
 To deploy a simple Spark standalone cluster issue
 
@@ -65,11 +66,11 @@ It will also setup a headless service so spark clients can be reachable from the
 
 Then to use `spark-shell` issue
 
-`kubectl run spark-base --rm -it --labels="app=spark-client" --image a0x8o/spark-base:3.0.2-hadoop3.2 -- bash ./spark/bin/spark-shell --master spark://spark-master:7077 --conf spark.driver.host=spark-client`
+`kubectl run spark-base --rm -it --labels="app=spark-client" --image a0x8o/spark-base:3.1.1-hadoop3.2 -- bash ./spark/bin/spark-shell --master spark://spark-master:7077 --conf spark.driver.host=spark-client`
 
 To use `spark-submit` issue for example
 
-`kubectl run spark-base --rm -it --labels="app=spark-client" --image a0x8o/spark-base:3.0.2-hadoop3.2 -- bash ./spark/bin/spark-submit --class CLASS_TO_RUN --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-client URL_TO_YOUR_APP`
+`kubectl run spark-base --rm -it --labels="app=spark-client" --image a0x8o/spark-base:3.1.1-hadoop3.2 -- bash ./spark/bin/spark-submit --class CLASS_TO_RUN --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-client URL_TO_YOUR_APP`
 
 You can use your own image packed with Spark and your application but when deployed it must be reachable from the workers.
 One way to achieve this is by creating a headless service for your pod and then use `--conf spark.driver.host=YOUR_HEADLESS_SERVICE` whenever you submit your application.

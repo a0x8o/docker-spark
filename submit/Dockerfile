@@ -1,4 +1,4 @@
-FROM a0x8o/spark-base:3.0.2-hadoop3.2
+FROM a0x8o/spark-base:3.1.1-hadoop3.2
 
 ENV SPARK_MASTER_NAME spark-master
 ENV SPARK_MASTER_PORT 7077

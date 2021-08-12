@@ -62,7 +62,7 @@ the `/template.sh` script at the end.
 #### Example Dockerfile
 
 ```
-FROM a0x8o/spark-scala-template:3.0.2-hadoop3.2
+FROM a0x8o/spark-scala-template:3.1.1-hadoop3.2
 
 ENV SPARK_APPLICATION_MAIN_CLASS com.example.my.Application
 ENV SPARK_APPLICATION_ARGS "foo bar baz"
