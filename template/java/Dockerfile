@@ -1,4 +1,4 @@
-FROM a0x8o/spark-submit:3.1.1-hadoop3.2
+FROM a0x8o/spark-submit:3.0.2-hadoop3.2
 
 ENV SPARK_APPLICATION_JAR_NAME application-1.0
 

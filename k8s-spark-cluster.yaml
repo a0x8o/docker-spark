@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
       - name: spark-master
-        image: a0x8o/spark-master:3.1.1-hadoop3.2
+        image: a0x8o/spark-master:3.0.2-hadoop3.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
       - name: spark-worker
-        image: a0x8o/spark-worker:3.1.1-hadoop3.2
+        image: a0x8o/spark-worker:3.0.2-hadoop3.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8081

@@ -2,7 +2,7 @@
 
 The Spark Scala template image serves as a base image to build your own Scala
 application to run on a Spark cluster. See
-[a0x8o/docker-spark README](https://github.com/a0x8o/docker-spark)
+[big-data-europe/docker-spark README](https://github.com/big-data-europe/docker-spark)
 for a description how to setup a Spark cluster.
 
 ## Scala Console
@@ -62,7 +62,7 @@ the `/template.sh` script at the end.
 #### Example Dockerfile
 
 ```
-FROM a0x8o/spark-scala-template:3.1.1-hadoop3.2
+FROM a0x8o/spark-scala-template:3.0.2-hadoop3.2
 
 ENV SPARK_APPLICATION_MAIN_CLASS com.example.my.Application
 ENV SPARK_APPLICATION_ARGS "foo bar baz"

@@ -1,6 +1,6 @@
 # Spark Python template
 
-The Spark Python template image serves as a base image to build your own Python application to run on a Spark cluster. See [a0x8o/docker-spark README](https://github.com/a0x8o/docker-spark) for a description how to setup a Spark cluster.
+The Spark Python template image serves as a base image to build your own Python application to run on a Spark cluster. See [big-data-europe/docker-spark README](https://github.com/big-data-europe/docker-spark) for a description how to setup a Spark cluster.
 
 ### Package your application using pip
 You can build and launch your Python application on a Spark cluster by extending this image with your sources. The template uses [pip](https://pip.pypa.io/en/stable/) to manage the dependencies of your
@@ -19,7 +19,7 @@ project, so make sure you have a `requirements.txt` file in the root of your app
 4. Build and run the image
 ```
 docker build --rm -t a0x8o/spark-app .
-docker run --name my-spark-app -e ENABLE_INIT_DAEMON=false --link spark-master:spark-master --net dockerspark_default -d a0x8o/spark-app
+docker run --name my-spark-app -e ENABLE_INIT_DAEMON=false --link spark-master:spark-master -d a0x8o/spark-app
 ```
 
 The sources in the project folder will be automatically added to `/app` if you directly extend the Spark Python template image. Otherwise you will have to add the sources by yourself in your Dockerfile with the command:
@@ -30,7 +30,7 @@ If you overwrite the template's `CMD` in your Dockerfile, make sure to execute t
 
 #### Example Dockerfile
 ```
-FROM a0x8o/spark-python-template:3.1.1-hadoop3.2
+FROM a0x8o/spark-python-template:3.0.2-hadoop3.2
 
 MAINTAINER You <you@example.org>
 
